@@ -1,5 +1,8 @@
 {
-  "text-color": "#414c63",
+  "main-color": "#ff9a00",
+  "text-color": "#8f8e8e",
+  "sec-text-color": "#ffffff",
+  "dark-text-color": "#333c49",
   "links-color": "#4b6fd7",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
