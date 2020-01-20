@@ -128,7 +128,45 @@ html(lang="ru")
                       +icon('link', 'iconend-link__icon')
                       .iconend-link__text Посмотреть сайт
 
+        .section-callback
 
+          section.section.reviews
+            .container.reviews__container
+              .reviews__header
+                h2.title.reviews__title Что обо мне говорят
+                .reviews__buttons
+                  a.direction-btn.direction-btn_next
+                    +icon('arrow-down', 'direction-btn__icon')
+                  a.direction-btn.direction-btn_prev
+                    +icon('arrow-down', 'direction-btn__icon')
+
+              .reviews__content
+                .reviews-slider
+                  .reviews-slider__display
+                    ul.reviews-slider__list
+                      li.reviews-slider__item
+                        .reviews-slider__content
+                          .reviews-slider__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                          .reviews-slider__user
+                            .reviews-slider__user-img
+
+                            .reviews-slider__user-info
+                              .reviews-slider__user-name Ковальчук Дмитрий
+                              .reviews-slider__user-desc Основатель Loftschool
+                      li.reviews-slider__item
+                        .reviews-slider__content
+                          .reviews-slider__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                          .reviews-slider__user
+                            .reviews-slider__user-img
+
+                            .reviews-slider__user-info
+                              .reviews-slider__user-name Владимир Сабанцев
+                              .reviews-slider__user-desc Преподаватель
+
+          section.section.contacts
+            .container.contacts__container
+              h2.title.contacts__title Связаться со мной
+              
 
       footer.footer
         .container.footer__container
