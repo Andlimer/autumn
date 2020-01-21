@@ -34,6 +34,16 @@
 }
 
 .about__ps {
+  position: relative;
   font-style: italic;
   line-height: 1.88;
+
+  &:before {
+    content: '*';
+    position: absolute;
+    top: -22px;
+    left: -60px;
+    font-size: 48px;
+    color: #382023;
+  }
 }
