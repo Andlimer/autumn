@@ -3,20 +3,42 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @include desktop {
+    height: 100vh;
+  }
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .about__left {
   margin-right: 100px;
   width: 350px;
+
+  @include phones {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
 }
 
 .about__right {
   width: 540px;
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .about__welcome-text {
   margin-bottom: 30px;
   font-weight: 600;
+
+  @include phones {
+    margin-bottom: 20px;
+  }
 }
 
 .about__username {
@@ -25,12 +47,20 @@
   font-weight: 700;
   line-height: 1;
   color: $sec-text-color;
+
+  @include tablets {
+    margin-bottom: 50px;
+  }
 }
   
 .about__desc {
   margin-bottom: 100px;
   font-weight: 600;
   line-height: 1.88;
+
+  @include tablets {
+    margin-bottom: 45px;
+  }
 }
 
 .about__ps {
@@ -45,5 +75,9 @@
     left: -60px;
     font-size: 48px;
     color: #382023;
+
+    @include phones {
+      left: -35px;
+    }
   }
 }

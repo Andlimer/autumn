@@ -1,5 +1,9 @@
 .hero {
   margin-bottom: 170px;
+
+  @include desktop {
+    margin-bottom: 0;
+  }
 }
 
 .hero__container {
@@ -8,6 +12,10 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+
+  @include laptop {
+    justify-content: flex-start;
+  }
 }
 
 .hero__header {
@@ -15,12 +23,34 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding-top: 60px;
 }
 
 .hero__logo {
   font-size: 36px;
   font-weight: 800;
+  line-height: 1;
   color: $sec-text-color;
+
+  @include laptop {
+    flex: 1;
+  }
+}
+
+.hero__menu {
+  @include laptop {
+    display: none;
+  }
+}
+
+.hero__social {
+  @include laptop {
+    margin-right: 90px;
+  }
+
+  @include phones {
+    display: none;
+  }
 }
 
 .hero__title {
@@ -30,6 +60,19 @@
   font-weight: 800;
   line-height: .83;
   color: $sec-text-color;
+
+  @include laptop {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  @include phones {
+    width: 200px;
+    font-size: 48px;
+  }
 }
 
 .hero__desc {
@@ -37,11 +80,23 @@
   top: 0;
   left: -225px;
   margin-right: 60px;
+  width: 165px;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.67;
   text-align: right;
   color: $text-color;
+
+  @include laptop {
+    position: static;
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  @include phones {
+    margin-bottom: 20px;
+  }
 }
 
 .hero__buttons {
@@ -50,6 +105,10 @@
   align-items: center;
   position: relative;
   bottom: 80px;
+
+  @include laptop {
+    display: none;
+  }
 }
 
 .hero__scroll {
