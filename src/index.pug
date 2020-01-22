@@ -38,7 +38,7 @@ html(lang="ru")
                 .hero__scroll Скролл
                 +icon('scroll', 'hero__scroll-icon')
 
-          section.section.about
+          section.about
             .container.about__container
               .about__left
                 .user
@@ -63,37 +63,37 @@ html(lang="ru")
                 .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
         section.section.section-skills
-          .container.section-skills__container
-            +image("content/skills-img.png", "section-skills__img")
-            h2.title.section-skills__title Чем я могу быть полезен вам
-            .section-skills__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .section-skills__content
-              -
-                var items = [
-                  ["Front-end", ["HTML5", "CSS3", "Javascript", "Jquery и Vue.js"]],
-                  ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
-                ];
-              ul.skills-graphic
-                each row in items
-                  li.skills-graphic__item
-                    .skills-row
-                      .skills-row__title #{row[0]}
-                      .skills-row__content
-                        ul.skills
-                          each skill in row[1]
-                            li.skills__item
-                              .skill
-                                svg(viewBox="0 0 100 100").skill__circle
-                                  circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-                                  circle(cx="50" cy="50" r="40" stroke="url(#gradient)"
-                                  transform="rotate(180 50 50)").skill__circle.skill__circle_over
-                                  linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                                    stop(offset="0%" stop-color="#d0731b")
-                                    stop(offset="100%" stop-color="#dc9322")
-                                .skill__title #{skill}
+          .container
+            .section-skills__block
+              h2.title.section-skills__title Чем я могу быть полезен вам
+              .section-skills__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .section-skills__content
+                -
+                  var items = [
+                    ["Front-end", ["HTML5", "CSS3", "Javascript", "Jquery и Vue.js"]],
+                    ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
+                  ];
+                ul.skills-graphic
+                  each row in items
+                    li.skills-graphic__item
+                      .skills-row
+                        .skills-row__title #{row[0]}
+                        .skills-row__content
+                          ul.skills
+                            each skill in row[1]
+                              li.skills__item
+                                .skill
+                                  svg(viewBox="0 0 100 100").skill__circle
+                                    circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                                    circle(cx="50" cy="50" r="40" stroke="url(#gradient)"
+                                    transform="rotate(180 50 50)").skill__circle.skill__circle_over
+                                    linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                                      stop(offset="0%" stop-color="#d0731b")
+                                      stop(offset="100%" stop-color="#dc9322")
+                                  .skill__title #{skill}
               
         section.section.works
-          .container.works__container
+          .container
             h2.title.works__title Мои работы
             .works__content
 
@@ -202,8 +202,7 @@ html(lang="ru")
                         placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса"
                       )
 
-                .form__buttons
-                  button.form__button(type="submit") Отправить
+                button.form__button(type="submit") Отправить
                     
       footer.footer
         .container.footer__container
