@@ -4,4 +4,24 @@
   font-weight: 700;
   line-height: 1;
   color: $sec-text-color;
+
+  @include laptop {
+    margin-bottom: 30px;
+  }
+}
+
+.skills-row__list {
+  display: flex;
+  
+  @include laptop {
+    justify-content: center;
+  }
+}
+
+.skills-row__item {
+  margin-right: 5%;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }

@@ -12,21 +12,39 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: -8%;
-    display: block;
-    width: 682px;
-    height: 983px;
+    bottom: -9%;
+    width: 40%;
+    height: 100%;
     background-image: url("../images/content/skills-img.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+
+    @include desktop {
+      left: -8%;
+    }
   }
 }
 
 .section-skills__block {
-  padding-left: 35%;
+  padding-left: 30%;
+
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    text-align: center;
+  }
 }
 
 .section-skills__title {
   margin-bottom: 60px;
   font-size: 30px;
+
+  @include laptop {
+    margin-bottom: 30px;
+  }
 }
 
 .section-skills__ps {
@@ -34,8 +52,19 @@
   margin-bottom: 90px;
   font-weight: 400;
   line-height: 30px;
+
+  @include laptop {
+    margin-bottom: 60px;
+  }
 }
 
 .section-skills__content {
-  padding-left: 127px;
+  width: 100%;
+  padding-left: 13%;
+
+  @include laptop {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
 }
