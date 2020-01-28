@@ -77,37 +77,7 @@ html(lang="ru")
           .container
             h2.title.works__title Мои работы
             .works__content
-
-              .slider
-                .slider__display
-                  +image('content/slide-1.jpg', 'slider__display-img')
-                  .slider__display-thumbs
-                    - var images = ["content/slide-1.jpg", "content/slide-2.jpg", "content/slide-3.jpg", "content/slide-4.jpg"];
-                    ul.slider-thumbs
-                      each item in images
-                        li.slider-thumbs__item
-                          a.slider-thumbs__link
-                            +image(item, 'slider-thumbs__img')
-                  .slider__buttons
-                    a.direction-btn.direction-btn_next
-                      +icon('arrow-down', 'direction-btn__icon')
-                    a.direction-btn.direction-btn_prev
-                      +icon('arrow-down', 'direction-btn__icon')
-
-                .slider__info
-                  .slider__info-namber 1
-                  .slider__tags
-                    - var tags = ["HTML", "CSS", "Javascript"];
-                    ul.tags
-                      each item in tags
-                        li.tags__item #{item}
-                  .slider__info-text
-                    h3.title.slider__info-title Сайт школы образования
-                    .slider__info-desc Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .slider__info-btns
-                    a.iconend-link
-                      +icon('link', 'iconend-link__icon')
-                      .iconend-link__text Посмотреть сайт
+              #slider-component
 
         .section-callback
 
