@@ -1,8 +1,11 @@
+.about {
+  padding-top: 100px;
+  padding-bottom: 250px;
+}
+
 .about__container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
 
   @include desktop {
     height: 100vh;
@@ -16,6 +19,7 @@
 .about__left {
   margin-right: 100px;
   width: 350px;
+  z-index: 5;
 
   @include phones {
     width: 100%;
@@ -26,6 +30,7 @@
 
 .about__right {
   width: 540px;
+  z-index: 5;
 
   @include phones {
     width: 100%;
@@ -54,7 +59,7 @@
 }
   
 .about__desc {
-  margin-bottom: 100px;
+  margin-bottom: 85px;
   font-weight: 600;
   line-height: 1.88;
 

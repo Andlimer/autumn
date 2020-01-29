@@ -1,11 +1,3 @@
-.hero {
-  margin-bottom: 170px;
-
-  @include desktop {
-    margin-bottom: 0;
-  }
-}
-
 .hero__container {
   display: flex;
   flex-direction: column;
@@ -24,6 +16,7 @@
   justify-content: space-between;
   width: 100%;
   padding-top: 60px;
+  z-index: 5;
 }
 
 .hero__logo {
@@ -104,7 +97,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 80px;
+  bottom: 70px;
 
   @include laptop {
     display: none;

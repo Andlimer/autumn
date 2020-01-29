@@ -11,6 +11,18 @@ html(lang="ru")
     .wrapper
       .maincontent
         .section-welcome
+          section.parallax
+            .parallax__layer(data-speed="0.05")
+              +image("parallax/1.png", "parallax__image")
+            .parallax__layer(data-speed="0.10")
+              +image("parallax/2.png", "parallax__image")
+            .parallax__layer(data-speed="0.15")
+              +image("parallax/3.png", "parallax__image")
+            .parallax__layer(data-speed="0.20")
+              +image("parallax/4.png", "parallax__image")
+            .parallax__layer
+              +image("parallax/5.jpg", "parallax__image")
+
           section.section.hero
             .container.hero__container
               header.hero__header
@@ -47,7 +59,7 @@ html(lang="ru")
                 .user
                   .user__avatar
                     .avatar
-                      +image("content/user.jpg", "фото пользователя", "avatar__image")
+                      +image("content/user.jpg", "avatar__image")
                   ul.user__desc
                     -
                       var items = [
