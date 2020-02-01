@@ -1,0 +1,23 @@
+script(type="text/x-template")#reviews
+  .reviews
+    .reviews__header
+      h2.title.reviews__title Что обо мне говорят
+      .reviews__buttons
+        a.direction-btn.direction-btn_next.reviews__btn_next
+          +icon('arrow-down', 'direction-btn__icon')
+        a.direction-btn.direction-btn_prev.reviews__btn_prev
+          +icon('arrow-down', 'direction-btn__icon')
+    .reviews__content
+      swiper(:options="swiperOption").reviews__content-list
+        swiper-slide.reviews__content-item(v-for="review in reviews")
+          .quote
+            .quote__text
+              p {{review.text}}
+            .quote__user
+              .user-min
+                .user-min__avatar
+                  .user-min__image
+                    img(:src="review.photo").user-min__avatar-img
+                .user-min__info
+                  .user-min__name {{review.name}}
+                  .user-min__occ {{review.desc}}

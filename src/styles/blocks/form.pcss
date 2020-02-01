@@ -5,43 +5,72 @@
 .form__row {
   display: flex;
   width: 100%;
-  margin-top: 40px;
+  margin-bottom: 40px;
 
-  &:first-child {
-    margin-top: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &_extra-margin {
+    margin-bottom: 60px;
   }
 }
 
-.form__block {
-  width: 100%;
+.form-block {
   margin-right: 95px;
+  border-bottom: 2px solid $text-color;
+  padding-bottom: 19px;
+  flex: 1;
 
   &:last-child {
     margin-right: 0;
   }
+
+  &:before {
+    content: attr(data-title);
+    margin-bottom: 30px;
+    display: block;
+    font-weight: 600;
+    color: $text-color;
+    margin-left: 45px;
+  }
 }
 
-.form__icon {
+.form-block__container {
+  display: flex;
+  align-items: center;
+
+  &_align_top {
+    align-items: flex-start;
+  }
+}
+
+.form-block__icon {
   width: 30px;
   height: 30px;
   fill: $text-color;
+  opacity: .3;
+  margin-right: 16px;
 }
 
-.form__input {
+.form-block__field {
+  flex: 1;
+}
+
+.form-block__input {
+  width: 100%;
   font-size: 18px;
   font-weight: 700;
   border: none;
-  border-bottom: 2px solid #888888;
   background: transparent;
   color: $sec-text-color;
-  outline: none;
 
   &::placeholder {
     color: $sec-text-color;
   }
 }
 
-.form__input_textarea {
+.form-block__input_textarea {
   width: 450px;
   height: 65px;
   line-height: 30px;
@@ -49,7 +78,6 @@
 }
 
 .form__button {
-  margin-top: 60px;
   padding: 30px 120px;
   font-size: 18px;
   font-weight: 700;

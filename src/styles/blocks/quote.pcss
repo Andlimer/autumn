@@ -1,0 +1,25 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 100px;
+  width: 420px;
+  height: 230px;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 63px;
+    opacity: .05;
+    background: svg-load('quote.svg', fill=$sec-text-color) center center / contain no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.quote__text {
+  line-height: 30px;
+}

@@ -91,81 +91,36 @@ html(lang="ru")
             .works__content
               #slider-component
 
-        .section-callback
+        section.contacts
+          .container
+            .contacts__about
+              #reviews-component
 
-          section.reviews
-            .container.reviews__container
-              .reviews__header
-                h2.title.reviews__title Что обо мне говорят
-                .reviews__buttons
-                  a.direction-btn.direction-btn_next
-                    +icon('arrow-down', 'direction-btn__icon')
-                  a.direction-btn.direction-btn_prev
-                    +icon('arrow-down', 'direction-btn__icon')
-
-              .reviews__content
-                .reviews-slider
-                  .reviews-slider__display
-                    ul.reviews-slider__list
-                      li.reviews-slider__item
-                        +icon('quote', 'reviews-slider__icon')
-                        .reviews-slider__content
-                          .reviews-slider__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                          .reviews-slider__user
-                            .reviews-slider__user-img
-                              +image('content/user-photo1.jpg', 'reviews-slider__img')
-                            .reviews-slider__user-info
-                              .reviews-slider__user-name Ковальчук Дмитрий
-                              .reviews-slider__user-desc Основатель Loftschool
-                      li.reviews-slider__item
-                        +icon('quote', 'reviews-slider__icon')
-                        .reviews-slider__content
-                          .reviews-slider__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                          .reviews-slider__user
-                            .reviews-slider__user-img
-                              +image('content/user-photo2.jpg', 'reviews-slider__img')
-                            .reviews-slider__user-info
-                              .reviews-slider__user-name Владимир Сабанцев
-                              .reviews-slider__user-desc Преподаватель
-
-          section.contacts
-            .container.contacts__container
-              h2.title.contacts__title Связаться со мной
-              
-              form.form(action="#")
+            .contacts__form
+              h2.title.contacts__form-title Связаться со мной
+              form.form
                 .form__row
-                  .form__block
-                    +icon('user', 'form__icon')
-                    .form__block-title Введите ваше имя
-                    input.form__input(
-                      type="text" 
-                      name="name" 
-                      placeholder="Евгений Гуртовой" 
-                      required
-                    )
-
-                  .form__block
-                    +icon('envelope', 'form__icon')
-                    .form__block-input
-                      .form__block-title Введите ваш email
-                      input.form__input(
-                        type="email" 
-                        name="email" 
-                        placeholder="Andlimer@gmail.com" 
-                        required
-                      )
-
-                .form__row
-                  .form__block
-                    +icon('message', 'form__icon')
-                    .form__block-input
-                      .form__block-title Сообщение к письму
-                      textarea.form__input.form__input_textarea(
-                        name="comment" 
-                        placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса"
-                      )
-
-                button.form__button(type="submit") Отправить
+                  - 
+                    var fields = [
+                      ['user', 'Введите ваше имя', 'Евгений Гуртовой'],
+                      ['envelope', 'Введите ваш email', 'Andlimer@gmail.com'],
+                    ]
+                  each item in fields
+                    label.form-block(data-title=item[1])
+                      .form-block__container
+                        +icon(`${item[0]}`, 'form-block__icon') 
+                        .form-block__field
+                          input(type="text" placeholder=item[2]).form-block__input
+                .form__row.form__row_extra-margin
+                  label.form-block(data-title="Сообщение к письму")
+                    .form-block__container.form-block__container_align_top
+                      +icon('message', 'form-block__icon') 
+                      .form-block__field
+                        textarea(
+                          placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса"
+                        ).form-block__input.form-block__input_textarea
+                .from__row
+                  button.form__button(type="submit") Отправить
                     
       footer.footer
         .container.footer__container
