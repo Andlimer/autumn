@@ -1,15 +1,34 @@
 .about {
+  position: relative;
   padding-top: 100px;
   padding-bottom: 250px;
+  background-image: url('../images/content/about-bg.jpg'),
+    linear-gradient(to top, #222427 50%, rgba(34, 36, 39, 0) 100%);
+  background-position: center 420px, center;
+  background-repeat: repeat-x, no-repeat;
+   
+  @include desktop {
+    padding-top: 300px;
+    padding-bottom: 200px;
+    background-image: url('../images/content/about-bg.jpg'),
+      linear-gradient(to top, #222427 85%, rgba(34, 36, 39, 0) 100%);
+    background-position: center bottom, center;
+  }
+
+  @include tablets {
+    padding-bottom: 100px;
+    background-position: center 280px, center;
+  }
+
+  @include phones {
+    padding: 100px 0;
+    background-position: center 90px, center;
+  }
 }
 
 .about__container {
   display: flex;
   justify-content: center;
-
-  @include desktop {
-    height: 100vh;
-  }
 
   @include phones {
     flex-direction: column;

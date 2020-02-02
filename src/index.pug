@@ -12,16 +12,22 @@ html(lang="ru")
       .maincontent
         .section-welcome
           section.parallax
+            .parallax__layer(data-speed="0.1")
+              picture
+                source(srcset=require("images/parallax/1_2560.jpg") media="(min-width: 1920px)").parallax__image
+                img(srcset=require("images/parallax/1.jpg")).parallax__image
             .parallax__layer(data-speed="0.05")
-              +image("parallax/1.png", "parallax__image")
+              picture
+                source(srcset=require("images/parallax/2_2560.png") media="(min-width: 1920px)").parallax__image
+                img(srcset=require("images/parallax/2.png")).parallax__image
             .parallax__layer(data-speed="0.10")
-              +image("parallax/2.png", "parallax__image")
-            .parallax__layer(data-speed="0.15")
-              +image("parallax/3.png", "parallax__image")
-            .parallax__layer(data-speed="0.20")
-              +image("parallax/4.png", "parallax__image")
-            //- .parallax__layer
-            //-   +image("content/about-bg.jpg", "parallax__image")
+              picture
+                source(srcset=require("images/parallax/3_2560.png") media="(min-width: 1920px)").parallax__image
+                img(srcset=require("images/parallax/3.png")).parallax__image
+            .parallax__layer(data-speed="0.13")
+              picture
+                source(srcset=require("images/parallax/4_2560.png") media="(min-width: 1920px)").parallax__image
+                img(srcset=require("images/parallax/4.png")).parallax__image
 
           section.section.hero
             .container.hero__container
@@ -77,7 +83,7 @@ html(lang="ru")
                 .about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-        section.section.section-skills
+        section.section-skills
           .container
             .section-skills__block
               h2.title.section-skills__title Чем я могу быть полезен вам
