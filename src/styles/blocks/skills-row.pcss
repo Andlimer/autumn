@@ -16,12 +16,20 @@
   @include laptop {
     justify-content: center;
   }
+
+  @include phones {
+    flex-wrap: wrap;
+  }
 }
 
 .skills-row__item {
-  margin-right: 5%;
+  margin-right: 20px;
 
   &:last-child {
+    margin-right: 0;
+  }
+
+  @include phones {
     margin-right: 0;
   }
 }

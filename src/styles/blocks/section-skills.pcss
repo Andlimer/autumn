@@ -2,39 +2,64 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 150px 0;
   background-image: url('../images/content/skills-bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  overflow: hidden;
 
   &:before {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -9%;
-    width: 40%;
-    height: 100%;
+    bottom: -85px;
+    width: 682px;
+    height: 983px;
     background-image: url("../images/content/skills-img.png");
     background-repeat: no-repeat;
-    background-position: left bottom;
     background-size: contain;
 
     @include desktop {
-      left: -8%;
+      width: 590px;
+      height: 807px;
+      left: -95px;
+      bottom: -60px;
     }
 
-    // @include laptop {
-    //   height: 486px;
-    //   width: 337px;
-    //   left: 50%;
-    //   transform: rotate(-90deg)
-    // }
+    @include laptop {
+      left: 50%;
+      bottom: -75px;
+      width: 337px;
+      height: 486px;
+      transform: translateX(-50%) rotate(-90deg);
+    }
+
+    @include phones {
+      width: 335px;
+      height: 438px;
+    }
+  }
+
+  @include laptop {
+    padding-top: 120px;
+    padding-bottom: 350px;
+  }
+
+  @include phones {
+    padding-top: 100px;
+    padding-bottom: 280px;
   }
 }
 
 .section-skills__block {
-  padding-left: 30%;
+  padding-left: 35%;
+  position: relative;
+
+  @include desktop {
+    padding-left: 30%;
+  }
 
   @include laptop {
     display: flex;
@@ -52,6 +77,15 @@
   @include laptop {
     margin-bottom: 30px;
   }
+
+  @include tablets {
+    width: 280px;
+  }
+
+  @include phones {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .section-skills__ps {
@@ -63,11 +97,24 @@
   @include laptop {
     margin-bottom: 60px;
   }
+
+  @include tablets {
+    width: 500px;
+  }
+
+  @include phones {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .section-skills__content {
   width: 100%;
-  padding-left: 13%;
+  padding-left: 125px;
+
+  @include desktop {
+    padding-left: 90px;
+  }
 
   @include laptop {
     padding-left: 0;
