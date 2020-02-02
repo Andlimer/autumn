@@ -1,33 +1,57 @@
 .slider-works {
   display: flex;
+  justify-content: space-between;
 }
 
 .slider-works__display {
   position: relative;
   width: 65%;
-  margin-right: 157px;
-  z-index: 5;
+
+  @include desktop {
+    width: 58%;
+  }
+}
+
+.slider-works__controller {
+  position: absolute;
+  right: -50px;
+  bottom: 60px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  @include desktop {
+    bottom: 30px;
+  }
 }
 
 .slider-works__thumbs {
-  display: flex;
-  position: absolute;
-  right: 0;
-  bottom: 100px;
+  width: 710px;
   height: 100px;
+  overflow: hidden;
 }
 
-.slider-works__thumbs 
-.slider-works-thumbs__img {
-  height: 100px;
+.slider-works__thumbs-list {
+  display: flex;
+  height: 100%;
+  
+  @include desktop {
+    transform: translateX(177px);
+  }
 }
 
 .slider-works__thumbs-item {
+
   &_active, 
   &:hover {
     outline: 3px solid $main-color;
     outline-offset: -3px;
   }
+}
+
+.slider-works__thumbs-link {
+  display: block;
+  width: 100%;
 }
 
 .slider-works__buttons 
@@ -43,24 +67,35 @@
   }
 }
 
-.slider-works__buttons {
-  position: absolute;
-  right: -50px;
-  bottom: 100px;
-}
+// .slider-works__buttons {
+//   position: absolute;
+//   right: -50px;
+//   bottom: 100px;
+// }
 
 .slider-works__info {
   position: relative;
+  width: 25%;
+
+  @include desktop {
+    width: 32%;
+  }
 }
 
 .slider-works__info-namber {
   position: absolute;
-  top: -38px;
+  // top: -38px;
   left: -220px;
+  bottom: 115px;
   font-size: 400px;
   font-weight: 800;
+  line-height: 1;
   color: #e6e6e6;
   z-index: -5;
+
+  @include desktop {
+    bottom: 85px;
+  }
 }
 
 .slider-works__tags {
@@ -82,7 +117,6 @@
 }
 
 .slider-works__info-desc {
-  width: 300px;
   margin-bottom: 35px;
   font-weight: 400;
   line-height: 30px;

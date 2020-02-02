@@ -68,8 +68,7 @@ new Vue ({
         case "prev":
           this.currentIndex--;
           break;
-      }
-      console.log(direction);       
+      }      
     },
     makeInfiniteLoopForIndex(value) {
       const worksAmountComputerCounted = this.works.length - 1;
