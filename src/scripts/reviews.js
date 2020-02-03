@@ -17,8 +17,8 @@ new Vue ({
           prevEl: ".reviews__btn_prev"
         },
         slidesPerView: 2,
-        slidesPerGroup: 2
-        // spaceBetween: 84
+        slidesPerGroup: 2,
+        spaceBetween: 0
       }
     }
   },

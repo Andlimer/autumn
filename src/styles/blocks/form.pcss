@@ -1,5 +1,12 @@
 .form {
   width: 850px;
+
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 }
 
 .form__row {
@@ -13,6 +20,10 @@
 
   &_extra-margin {
     margin-bottom: 60px;
+  }
+
+  @include phones-hd {
+    flex-direction: column;
   }
 }
 
@@ -33,6 +44,19 @@
     font-weight: 600;
     color: $text-color;
     margin-left: 45px;
+  }
+
+  @include desktop {
+    border-color: $sec-text-color;
+  }
+
+  @include phones-hd {
+    margin-right: 0;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -68,13 +92,28 @@
   &::placeholder {
     color: $sec-text-color;
   }
+
+  @include phones {
+    font-size: 16px;
+  }
 }
 
 .form-block__input_textarea {
-  width: 450px;
   height: 65px;
   line-height: 30px;
   resize: none;
+
+  &::placeholder {
+    width: 450px;
+
+    @include phones {
+      width: 100%;
+    }
+  }
+
+  @include phones {
+    height: 100px;
+  }
 }
 
 .form__button {
@@ -87,5 +126,9 @@
 
   &:hover {
     background-image: linear-gradient(to right, #ff7f00 0%, #ff9d00 100%);
+  }
+
+  @include phones {
+    padding: 25px 80px;
   }
 }
