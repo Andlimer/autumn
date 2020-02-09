@@ -14,6 +14,7 @@
   }
 
   .section-title {
+    margin-bottom: 60px;
     font-size: 21px;
     font-weight: 700;
     line-height: 1;
@@ -35,6 +36,28 @@
       background-color: transparent;
       border-bottom: 1px solid transparent;
     }
+  }
+
+  .input__title {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: $input-color;
+  }
+
+  .form {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+  }
+
+  .form__title {
+    padding: 0 10px 30px;
+    margin-bottom: 48px;
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid $input-color;
   }
 
   .form__input_textarea {
@@ -170,19 +193,15 @@
     padding-top: 60px;
   }
 
-  .about__header {
+  .about__title {
     display: flex;
     align-items: center;
-    margin-bottom: 60px;
-  }
-
-  .about__title {
-    margin-right: 60px;
   }
 
   .new-group {
     display: flex;
     align-items: center;
+    margin-left: 60px;
   }
 
   .new-group__icon {
@@ -205,6 +224,7 @@
   }
 
   .new-group__text {
+    font-size: 16px;
     font-weight: 600;
     color: $admin-main-color;
   }
@@ -300,8 +320,6 @@
     display: none;
   }
 
-
-
   .groups__footer {
     display: flex;
     justify-content: flex-end;
@@ -340,21 +358,13 @@
     margin-bottom: 60px;
   }
 
-  .new-work {
-    padding: 30px 20px;
-    margin-bottom: 30px;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
-  }
-
-  .new-work__title {
-    padding: 0 10px 25px 10px;
+  /* .new-work__title {
+    padding: 0 10px 30px;
     margin-bottom: 48px;
     font-size: 18px;
     font-weight: 700;
     border-bottom: 1px solid $input-color;
-  }
+  } */
 
   .new-work__content {
     display: flex;
@@ -397,6 +407,14 @@
     text-transform: uppercase;
   }
 
+  .page-button_cancel {
+    padding: 0;
+    margin-right: 60px;
+    font-weight: 600;
+    background-color: transparent;
+    color: $admin-main-color;
+  }
+
   .new-work__row {
     margin-bottom: 30px;
     width: 100%;
@@ -406,11 +424,11 @@
     }
   }
 
-  .new-work__input-title {
+  /* .new-work__input-title {
     margin-bottom: 15px;
     font-weight: 600;
     color: $input-color;
-  }
+  } */
 
   .new-work__input {
     width: 100%;
@@ -466,13 +484,13 @@
     align-items: center;
   }
 
-  .new-work__button-reset {
+  /* .new-work__button-reset {
     padding: 0;
     margin-right: 60px;
     font-weight: 600;
     background-color: transparent;
     color: $admin-main-color;
-  }
+  } */
 
   .works__list {
     display: flex;
@@ -602,6 +620,145 @@
     }
   }
 
+  .reviews__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .reviews__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    width: 32%;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    background-color: #fff;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  .new-review {
+    padding-bottom: 50px;
+  }
+
+  .new-review__content {
+    padding: 0px 10px;
+    display: flex;
+  }
+
+  .new-review__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 30px;
+  }
+
+  .new-review__right {
+    width: 620px;
+  }
+
+  .new-review__photo {
+    margin-bottom: 30px;
+    width: 200px;
+    height: 200px;
+    background-image: svg-load("user-review.svg", fill=#fff,  width=105px, height=133px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #dee4ed;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .new-review__add-photo {
+    font-weight: 600;
+    color: $admin-main-color;
+    text-decoration: none;
+  }
+
+  .new-review__row {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .new-review__block {
+    margin-right: 30px;
+    width: 100%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .new-review__input {
+    width: 100%;
+  }
+
+  .new-review__input {
+    padding: 20px;
+  }
+
+  .new-review__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+  }
+
+  .review__title {
+    margin-bottom: 30px;
+    padding: 0px 10px 30px;
+    border-bottom: 1px solid $input-color;
+  }
+
+  .review-user {
+    display: flex;
+  }
+
+  .review-user__image {
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .review-user__name {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .review-user__desc {;
+    font-weight: 600;
+    color: $input-color;
+  }
+
+  .review__content {
+    padding: 0px 10px;
+  }
+
+  .review__text {
+    padding-right: 15px;
+    font-weight: 600;
+    line-height: 30px;
+    opacity: .7;
+  }
+
+  .review__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+
 </style>
 
 <template lang="pug">
@@ -624,12 +781,10 @@
                 a.nav__link(href="#") #{item}
     section.about
       .container
-        .about__header
-          h2.section-title.about__title Блок «Обо мне»
-          .about__button
-            a.new-group
-              span.new-group__icon
-              span.new-group__text Добавить группу
+        h2.section-title.about__title Блок «Обо мне»
+          a.new-group
+            span.new-group__icon
+            span.new-group__text Добавить группу
 
         .groups
           ul.groups__list
@@ -768,8 +923,8 @@
     section.works
       .container
         h2.section-title.works__title Блок «Работы»
-        form.new-work
-          h3.new-work__title Редактирование работы
+        form.form.new-work
+          h3.form__title.new-work__title Редактирование работы
           .new-work__content
             .new-work__left
               .add-work
@@ -781,22 +936,21 @@
                 .new-work__row
                   label.new-work__block
                     if item === "Описание"
-                      p.new-work__input-title #{item}
+                      p.input__title.new-work__input-title #{item}
                       textarea.new-work__input.form__input_textarea
                     else if item === "Добавление тэга"
-                      p.new-work__input-title #{item}
+                      p.input__title.new-work__input-title #{item}
                       input(type="text").input.new-work__input
                       ul.new-work__tags
                         - var tags = ["HTML", "CSS", "JavaScript"];
                         each tag in tags
                           li.new-work__tag #{tag}
                             span.close.new-work__del-tag
-                          
                     else
-                      p.new-work__input-title #{item}
+                      p.input__title.new-work__input-title #{item}
                       input(type="text").input.new-work__input
               .new-work__buttons
-                button(type="reset").new-work__button-reset Отмена
+                button(type="reset").page-button_cancel.new-work__button-reset Отмена
                 button.page-button.new-work__button Сохранить
 
         ul.works__list
@@ -875,6 +1029,72 @@
                     span.btn-change__icon-rename
                   button.btn-change.btn-change_del Удалить
                     span.btn-change__icon-del
+    
+    section.reviews
+      .container
+        h2.section-title.reviews__title Блок «Отзывы»
+        form.form.new-review
+          h3.form__title.new-review__title Новый отзыв
+          .new-review__content
+            .new-review__left
+              .new-review__photo
+              a(href="#").new-review__add-photo Добавить фото
+            .new-review__right
+              .new-review__row
+                label.new-review__block
+                  p.input__title.new-review__input-title Имя автора
+                  input(type="text").input.new-review__input
+                label.new-review__block
+                  p.input__title.new-review__input-title Титул автора
+                  input(type="text").input.new-review__input
+              .new-review__row
+                label.new-review__block
+                  p.input__title.new-review__input-title Отзыв
+                  textarea.new-review__input.form__input_textarea
+              .new-review__buttons
+                button(type="reset").page-button_cancel.new-review__button-reset Отмена
+                button.page-button.new-review__button Сохранить
+
+        ul.reviews__list
+          li.reviews__item
+            button.btn-create
+              span.btn-create__icon
+              span.btn-create__text Добавить отзыв
+
+          li.reviews__item
+            .review
+              .review__title
+                .review-user
+                  .review-user__image
+                    img.review-user__img(src="../images/content/user-photo1.jpg")
+                  .review-user__text
+                    .review-user__name Ковальчук Дмитрий
+                    .review-user__desc Основатель Loftschool
+              .review__content
+                .review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .review__buttons
+                  button.btn-change.btn-change_rename Править
+                    span.btn-change__icon-rename
+                  button.btn-change.btn-change_del Удалить
+                    span.btn-change__icon-del
+
+          li.reviews__item
+            .review
+              .review__title
+                .review-user
+                  .review-user__image
+                    img.review-user__img(src="../images/content/user-photo1.jpg")
+                  .review-user__text
+                    .review-user__name Владимир Сабанцев
+                    .review-user__desc Преподаватель
+              .review__content
+                .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                .review__buttons
+                  button.btn-change.btn-change_rename Править
+                    span.btn-change__icon-rename
+                  button.btn-change.btn-change_del Удалить
+                    span.btn-change__icon-del
+
 
               
 </template>
