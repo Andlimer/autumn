@@ -1,344 +1,352 @@
 <template lang="pug">
   .page-content
     header.header
-      .container.header__container
-        .header__left
-          .header__user-photo
-            img.header__user-img(src="../images/content/user.jpg")
-          .header__user-name Евгений Гуртовой
-          .header__desc Панель администрирования
-        .header__right
-          a.header__exit(href="#") Выйти
+      appHeader
     nav.nav
-      .container
-        - var list = ["Обо мне", "Работы", "Отзывы"];
-          ul.nav__list
-            each item in list
-              li.nav__item.nav__item_active
-                a.nav__link(href="#") #{item}
-    section.about
-      .container
-        h2.section-title.about__title Блок «Обо мне»
-          a.new-group
-            span.new-group__icon
-            span.new-group__text Добавить группу
+      appTabs
+    main.content
 
-        .groups
-          ul.groups__list
+      section.about
+        .container
+          h2.section-title.about__title Блок «Обо мне»
+            a.new-group
+              span.new-group__icon
+              span.new-group__text Добавить группу
 
-            li.groups__item
-              .groups__header
-                input.input.groups__title(
-                  type="text" 
-                  placeholder="Название новой группы"
-                )
-                .group-buttons
-                  button.button-icon.button-icon_tick
-                  button.button-icon.button-icon_remove
-              
-              .groups__footer
-                input.input.groups__new-skill-name(
-                  type="text" 
-                  placeholder="Новый навык"
-                )
-                input.input.groups__new-skill-percent(
-                  type="number" 
-                  placeholder="100 %"
-                )
-                button.groups__new-skill-add +
+          .groups
+            ul.groups__list
 
-            li.groups__item
-              .groups__header
-                input.input.groups__title(
-                  type="text" 
-                  placeholder="Название новой группы"
-                  value="Frontend"
-                  disabled
-                )
-                .group-buttons
-                  .group-buttons-change
-                    button.button-icon.button-icon_pencil
-                  .group-buttons-save
+              li.groups__item
+                .groups__header
+                  input.input.groups__title(
+                    type="text" 
+                    placeholder="Название новой группы"
+                  )
+                  .group-buttons
                     button.button-icon.button-icon_tick
                     button.button-icon.button-icon_remove
-              .skills
-                ul.skills__list
-                  -
-                    var items = [
-                      ["HTML5", "100"],
-                      ["CSS3", "90"],
-                      ["JavaScript", "80"],
-                      ["Jquery и Vue.js", "85"]
-                    ];
-                  each item in items
-                    li.skills__item
-                      .skills__row
-                        input.skills__input.skills__skill-name(
-                          type="text"
-                          value=`${item[0]}`
-                          disabled
-                        )
-                        input.skills__input.skills__skill-percent(
-                          type="number"
-                          value=`${item[1]}`
-                          disabled
-                        )
-                      .group-buttons
-                        .group-buttons-change
-                          button.button-icon.button-icon_pencil
-                          button.button-icon.button-icon_trash
-                        .group-buttons-save
-                          button.button-icon.button-icon_tick
-                          button.button-icon.button-icon_remove
+                
+                .groups__footer
+                  input.input.groups__new-skill-name(
+                    type="text" 
+                    placeholder="Новый навык"
+                  )
+                  input.input.groups__new-skill-percent(
+                    type="number" 
+                    placeholder="100 %"
+                  )
+                  button.groups__new-skill-add +
 
-              .groups__footer
-                input.input.groups__new-skill-name(
-                  type="text" 
-                  placeholder="Новый навык"
-                )
-                input.input.groups__new-skill-percent(
-                  type="number" 
-                  placeholder="100 %"
-                )
-                button.groups__new-skill-add +
+              li.groups__item
+                .groups__header
+                  input.input.groups__title(
+                    type="text" 
+                    placeholder="Название новой группы"
+                    value="Frontend"
+                    disabled
+                  )
+                  .group-buttons
+                    .group-buttons-change
+                      button.button-icon.button-icon_pencil
+                    .group-buttons-save
+                      button.button-icon.button-icon_tick
+                      button.button-icon.button-icon_remove
+                .skills
+                  ul.skills__list
+                    -
+                      var items = [
+                        ["HTML5", "100"],
+                        ["CSS3", "90"],
+                        ["JavaScript", "80"],
+                        ["Jquery и Vue.js", "85"]
+                      ];
+                    each item in items
+                      li.skills__item
+                        .skills__row
+                          input.skills__input.skills__skill-name(
+                            type="text"
+                            value=`${item[0]}`
+                            disabled
+                          )
+                          input.skills__input.skills__skill-percent(
+                            type="number"
+                            value=`${item[1]}`
+                            disabled
+                          )
+                        .group-buttons
+                          .group-buttons-change
+                            button.button-icon.button-icon_pencil
+                            button.button-icon.button-icon_trash
+                          .group-buttons-save
+                            button.button-icon.button-icon_tick
+                            button.button-icon.button-icon_remove
 
-            li.groups__item
-              .groups__header
-                input.input.groups__title(
-                  type="text" 
-                  placeholder="Название новой группы"
-                  value="Workflow"
-                  disabled
-                )
-                .group-buttons
-                  .group-buttons-change
-                    button.button-icon.button-icon_pencil
-                  .group-buttons-save
-                    button.button-icon.button-icon_tick
-                    button.button-icon.button-icon_remove
-              .skills
-                ul.skills__list
-                  -
-                    var items = [
-                      ["Git", "30"],
-                      ["Terminal", "20"],
-                      ["Gulp", "10"],
-                      ["Webpack", "25"]
-                    ];
-                  each item in items
-                    li.skills__item
-                      .skills__row
-                        input.skills__input.skills__skill-name(
-                          type="text"
-                          value=`${item[0]}`
-                          disabled
-                        )
-                        input.skills__input.skills__skill-percent(
-                          type="number"
-                          value=`${item[1]}`
-                          disabled
-                        )
-                      .group-buttons
-                        .group-buttons-change
-                          button.button-icon.button-icon_pencil
-                          button.button-icon.button-icon_trash
-                        .group-buttons-save
-                          button.button-icon.button-icon_tick
-                          button.button-icon.button-icon_remove
+                .groups__footer
+                  input.input.groups__new-skill-name(
+                    type="text" 
+                    placeholder="Новый навык"
+                  )
+                  input.input.groups__new-skill-percent(
+                    type="number" 
+                    placeholder="100 %"
+                  )
+                  button.groups__new-skill-add +
 
-              .groups__footer
-                input.input.groups__new-skill-name(
-                  type="text" 
-                  placeholder="Новый навык"
-                )
-                input.input.groups__new-skill-percent(
-                  type="number" 
-                  placeholder="100 %"
-                )
-                button.groups__new-skill-add +
+              li.groups__item
+                .groups__header
+                  input.input.groups__title(
+                    type="text" 
+                    placeholder="Название новой группы"
+                    value="Workflow"
+                    disabled
+                  )
+                  .group-buttons
+                    .group-buttons-change
+                      button.button-icon.button-icon_pencil
+                    .group-buttons-save
+                      button.button-icon.button-icon_tick
+                      button.button-icon.button-icon_remove
+                .skills
+                  ul.skills__list
+                    -
+                      var items = [
+                        ["Git", "30"],
+                        ["Terminal", "20"],
+                        ["Gulp", "10"],
+                        ["Webpack", "25"]
+                      ];
+                    each item in items
+                      li.skills__item
+                        .skills__row
+                          input.skills__input.skills__skill-name(
+                            type="text"
+                            value=`${item[0]}`
+                            disabled
+                          )
+                          input.skills__input.skills__skill-percent(
+                            type="number"
+                            value=`${item[1]}`
+                            disabled
+                          )
+                        .group-buttons
+                          .group-buttons-change
+                            button.button-icon.button-icon_pencil
+                            button.button-icon.button-icon_trash
+                          .group-buttons-save
+                            button.button-icon.button-icon_tick
+                            button.button-icon.button-icon_remove
 
-    section.works
-      .container
-        h2.section-title.works__title Блок «Работы»
-        form.form.new-work
-          h3.form__title.new-work__title Редактирование работы
-          .new-work__content
-            .new-work__left
-              .add-work
-                .add-work__text Перетащите или загрузите для загрузки изображения
-                button.page-button.add-work__button Загрузить
-            .new-work__right
-              - var items = ["Название", "Ссылка", "Описание", "Добавление тэга"];
-              each item in items
-                .new-work__row
-                  label.new-work__block
-                    if item === "Описание"
-                      p.input__title.new-work__input-title #{item}
-                      textarea.new-work__input.form__input_textarea
-                    else if item === "Добавление тэга"
-                      p.input__title.new-work__input-title #{item}
-                      input(type="text").input.new-work__input
-                      ul.new-work__tags
-                        - var tags = ["HTML", "CSS", "JavaScript"];
-                        each tag in tags
-                          li.new-work__tag #{tag}
-                            span.close.new-work__del-tag
-                    else
-                      p.input__title.new-work__input-title #{item}
-                      input(type="text").input.new-work__input
-              .new-work__buttons
-                button(type="reset").page-button_cancel.new-work__button-reset Отмена
-                button.page-button.new-work__button Сохранить
+                .groups__footer
+                  input.input.groups__new-skill-name(
+                    type="text" 
+                    placeholder="Новый навык"
+                  )
+                  input.input.groups__new-skill-percent(
+                    type="number" 
+                    placeholder="100 %"
+                  )
+                  button.groups__new-skill-add +
 
-        ul.works__list
-          li.works__item
-            .work
+      section.works
+        .container
+          h2.section-title.works__title Блок «Работы»
+          form.form.new-work
+            h3.form__title.new-work__title Редактирование работы
+            .new-work__content
+              .new-work__left
+                .add-work
+                  .add-work__text Перетащите или загрузите для загрузки изображения
+                  button.page-button.add-work__button Загрузить
+              .new-work__right
+                - var items = ["Название", "Ссылка", "Описание", "Добавление тэга"];
+                each item in items
+                  .new-work__row
+                    label.new-work__block
+                      if item === "Описание"
+                        p.input__title.new-work__input-title #{item}
+                        textarea.new-work__input.form__input_textarea
+                      else if item === "Добавление тэга"
+                        p.input__title.new-work__input-title #{item}
+                        input(type="text").input.new-work__input
+                        ul.new-work__tags
+                          - var tags = ["HTML", "CSS", "JavaScript"];
+                          each tag in tags
+                            li.new-work__tag #{tag}
+                              span.close.new-work__del-tag
+                      else
+                        p.input__title.new-work__input-title #{item}
+                        input(type="text").input.new-work__input
+                .new-work__buttons
+                  button(type="reset").page-button_cancel.new-work__button-reset Отмена
+                  button.page-button.new-work__button Сохранить
+
+          ul.works__list
+            li.works__item
+              .work
+                button.btn-create
+                  span.btn-create__icon
+                  span.btn-create__text Добавить работу
+
+            li.works__item
+              .work
+                .work__image
+                  img.work__img(src="../images/content/slide-1.jpg")
+                .work__content
+                  .work__title Сайт школы образования
+                  .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a(href="#").work__link http://loftschool.ru
+                  .work__buttons
+                    button.btn-change.btn-change_rename Править
+                      span.btn-change__icon-rename
+                    button.btn-change.btn-change_del Удалить
+                      span.btn-change__icon-del
+
+            li.works__item
+              .work
+                .work__image
+                  img.work__img(src="../images/content/slide-2.jpg")
+                .work__content
+                  .work__title Сайт школы образования
+                  .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a(href="#").work__link http://loftschool.ru
+                  .work__buttons
+                    button.btn-change.btn-change_rename Править
+                      span.btn-change__icon-rename
+                    button.btn-change.btn-change_del Удалить
+                      span.btn-change__icon-del
+            
+            li.works__item
+              .work
+                .work__image
+                  img.work__img(src="../images/content/slide-3.jpg")
+                .work__content
+                  .work__title Сайт школы образования
+                  .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a(href="#").work__link http://loftschool.ru
+                  .work__buttons
+                    button.btn-change.btn-change_rename Править
+                      span.btn-change__icon-rename
+                    button.btn-change.btn-change_del Удалить
+                      span.btn-change__icon-del
+                  
+            li.works__item
+              .work
+                .work__image
+                  img.work__img(src="../images/content/slide-4.jpg")
+                .work__content
+                  .work__title Сайт школы образования
+                  .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a(href="#").work__link http://loftschool.ru
+                  .work__buttons
+                    button.btn-change.btn-change_rename Править
+                      span.btn-change__icon-rename
+                    button.btn-change.btn-change_del Удалить
+                      span.btn-change__icon-del
+
+            li.works__item
+              .work
+                .work__image
+                  img.work__img(src="../images/content/slide-5.jpg")
+                .work__content
+                  .work__title Сайт школы образования
+                  .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a(href="#").work__link http://loftschool.ru
+                  .work__buttons
+                    button.btn-change.btn-change_rename Править
+                      span.btn-change__icon-rename
+                    button.btn-change.btn-change_del Удалить
+                      span.btn-change__icon-del
+      
+      section.reviews
+        .container
+          h2.section-title.reviews__title Блок «Отзывы»
+          form.form.new-review
+            h3.form__title.new-review__title Новый отзыв
+            .new-review__content
+              .new-review__left
+                .new-review__photo
+                a(href="#").new-review__add-photo Добавить фото
+              .new-review__right
+                .new-review__row
+                  label.new-review__block
+                    p.input__title.new-review__input-title Имя автора
+                    input(type="text").input.new-review__input
+                  label.new-review__block
+                    p.input__title.new-review__input-title Титул автора
+                    input(type="text").input.new-review__input
+                .new-review__row
+                  label.new-review__block
+                    p.input__title.new-review__input-title Отзыв
+                    textarea.new-review__input.form__input_textarea
+                .new-review__buttons
+                  button(type="reset").page-button_cancel.new-review__button-reset Отмена
+                  button.page-button.new-review__button Сохранить
+
+          ul.reviews__list
+            li.reviews__item
               button.btn-create
                 span.btn-create__icon
-                span.btn-create__text Добавить работу
+                span.btn-create__text Добавить отзыв
 
-          li.works__item
-            .work
-              .work__image
-                img.work__img(src="../images/content/slide-1.jpg")
-              .work__content
-                .work__title Сайт школы образования
-                .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").work__link http://loftschool.ru
-                .work__buttons
-                  button.btn-change.btn-change_rename Править
-                    span.btn-change__icon-rename
-                  button.btn-change.btn-change_del Удалить
-                    span.btn-change__icon-del
+            li.reviews__item
+              .review
+                .review__title
+                  .review-user
+                    .review-user__image
+                      img.review-user__img(src="../images/content/user-photo1.jpg")
+                    .review-user__text
+                      .review-user__name Ковальчук Дмитрий
+                      .review-user__desc Основатель Loftschool
+                .review__content
+                  .review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .review__buttons
+                    button.btn-change.btn-change_rename Править
+                      span.btn-change__icon-rename
+                    button.btn-change.btn-change_del Удалить
+                      span.btn-change__icon-del
 
-          li.works__item
-            .work
-              .work__image
-                img.work__img(src="../images/content/slide-2.jpg")
-              .work__content
-                .work__title Сайт школы образования
-                .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").work__link http://loftschool.ru
-                .work__buttons
-                  button.btn-change.btn-change_rename Править
-                    span.btn-change__icon-rename
-                  button.btn-change.btn-change_del Удалить
-                    span.btn-change__icon-del
-          
-          li.works__item
-            .work
-              .work__image
-                img.work__img(src="../images/content/slide-3.jpg")
-              .work__content
-                .work__title Сайт школы образования
-                .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").work__link http://loftschool.ru
-                .work__buttons
-                  button.btn-change.btn-change_rename Править
-                    span.btn-change__icon-rename
-                  button.btn-change.btn-change_del Удалить
-                    span.btn-change__icon-del
-                
-          li.works__item
-            .work
-              .work__image
-                img.work__img(src="../images/content/slide-4.jpg")
-              .work__content
-                .work__title Сайт школы образования
-                .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").work__link http://loftschool.ru
-                .work__buttons
-                  button.btn-change.btn-change_rename Править
-                    span.btn-change__icon-rename
-                  button.btn-change.btn-change_del Удалить
-                    span.btn-change__icon-del
-
-          li.works__item
-            .work
-              .work__image
-                img.work__img(src="../images/content/slide-5.jpg")
-              .work__content
-                .work__title Сайт школы образования
-                .work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").work__link http://loftschool.ru
-                .work__buttons
-                  button.btn-change.btn-change_rename Править
-                    span.btn-change__icon-rename
-                  button.btn-change.btn-change_del Удалить
-                    span.btn-change__icon-del
-    
-    section.reviews
-      .container
-        h2.section-title.reviews__title Блок «Отзывы»
-        form.form.new-review
-          h3.form__title.new-review__title Новый отзыв
-          .new-review__content
-            .new-review__left
-              .new-review__photo
-              a(href="#").new-review__add-photo Добавить фото
-            .new-review__right
-              .new-review__row
-                label.new-review__block
-                  p.input__title.new-review__input-title Имя автора
-                  input(type="text").input.new-review__input
-                label.new-review__block
-                  p.input__title.new-review__input-title Титул автора
-                  input(type="text").input.new-review__input
-              .new-review__row
-                label.new-review__block
-                  p.input__title.new-review__input-title Отзыв
-                  textarea.new-review__input.form__input_textarea
-              .new-review__buttons
-                button(type="reset").page-button_cancel.new-review__button-reset Отмена
-                button.page-button.new-review__button Сохранить
-
-        ul.reviews__list
-          li.reviews__item
-            button.btn-create
-              span.btn-create__icon
-              span.btn-create__text Добавить отзыв
-
-          li.reviews__item
-            .review
-              .review__title
-                .review-user
-                  .review-user__image
-                    img.review-user__img(src="../images/content/user-photo1.jpg")
-                  .review-user__text
-                    .review-user__name Ковальчук Дмитрий
-                    .review-user__desc Основатель Loftschool
-              .review__content
-                .review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                .review__buttons
-                  button.btn-change.btn-change_rename Править
-                    span.btn-change__icon-rename
-                  button.btn-change.btn-change_del Удалить
-                    span.btn-change__icon-del
-
-          li.reviews__item
-            .review
-              .review__title
-                .review-user
-                  .review-user__image
-                    img.review-user__img(src="../images/content/user-photo1.jpg")
-                  .review-user__text
-                    .review-user__name Владимир Сабанцев
-                    .review-user__desc Преподаватель
-              .review__content
-                .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                .review__buttons
-                  button.btn-change.btn-change_rename Править
-                    span.btn-change__icon-rename
-                  button.btn-change.btn-change_del Удалить
-                    span.btn-change__icon-del   
+            li.reviews__item
+              .review
+                .review__title
+                  .review-user
+                    .review-user__image
+                      img.review-user__img(src="../images/content/user-photo1.jpg")
+                    .review-user__text
+                      .review-user__name Владимир Сабанцев
+                      .review-user__desc Преподаватель
+                .review__content
+                  .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .review__buttons
+                    button.btn-change.btn-change_rename Править
+                      span.btn-change__icon-rename
+                    button.btn-change.btn-change_del Удалить
+                      span.btn-change__icon-del
 </template>
+
+<script>
+import header from './components/header';
+import tabs from './components/tabs';
+
+export default {
+  name: 'app',
+  components: {
+    appHeader: header,
+    appTabs: tabs
+  },
+  data () {
+    return {
+
+    }
+  }
+}
+</script>
 
 <style lang="postcss">
   /* import стилей */
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
   @import "normalize.css";
   @import "../styles/mixins.pcss";
   @import "../styles/layout/base.pcss";
+   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 
   body {
     color: $admin-text-color;
@@ -424,104 +432,6 @@
       background: svg-load("remove.svg", fill=#bf2929, width=100%, height=100%) no-repeat;
     }
   }
-
-  /* header */
-  .header {
-    padding: 18px 0;
-    color: $sec-text-color;
-    background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
-  }
-
-  .header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header__left {
-    display: flex;
-    align-items: center;
-  }
-
-  .header__user-photo {
-    margin-right: 20px;
-    width: 45px;
-    height: 45px;
-    overflow: hidden;
-    border-radius: 50%;
-  }
-
-  .header__user-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .header__user-name {
-    margin-right: 28px;
-    font-size: 18px;
-  }
-
-  .header__desc {
-    font-size: 14px;
-    opacity: .5;
-  }
-
-  .header__exit {
-    opacity: .7;
-  }
-
-  /* nav */
-  .nav {
-    background-color: $sec-text-color;
-  }
-
-  .nav__list {
-    display: flex;
-    align-items: center;
-    padding: 30px;
-  }
-
-  .nav__item {
-    margin-right: 60px;
-  }
-
-  .nav__link {
-    position: relative;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color .4s;
-
-    &:hover {
-      color: $admin-main-color;
-    }
-
-    &:after {
-      content: "";
-      display: block;
-      width: 0%;
-      height: 3px;
-      position:absolute;
-      left:50%;
-      bottom: -30px;
-      background-color: $admin-main-color;
-      transform:translateX(-50%);
-      transition: width .4s;
-    }
-
-    &:hover:after {
-      width: 125px;
-    }
-  }
-
-  /* .nav__item_active {
-    .nav__link {
-      color: $admin-main-color;
-    }
-    .nav__link:after {
-      width: 125px;
-    }
-  } */
 
   /* about */
   .about {
@@ -1093,5 +1003,4 @@
     justify-content: space-between;
     margin-top: 60px;
   }
-
 </style>
