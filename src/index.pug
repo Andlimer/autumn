@@ -108,23 +108,32 @@ html(lang="ru")
                 .form__row
                   - 
                     var fields = [
-                      ['user', 'Введите ваше имя', 'Евгений Гуртовой'],
-                      ['envelope', 'Введите ваш email', 'Andlimer@gmail.com'],
+                      ['user', 'Введите ваше имя', 'Евгений Гуртовой', 'name', 'text'],
+                      ['envelope', 'Введите ваш email', 'Andlimer@gmail.com', 'to', 'email']
                     ]
                   each item in fields
-                    label.form-block(data-title=item[1])
-                      .form-block__container
-                        +icon(`${item[0]}`, 'form-block__icon') 
-                        .form-block__field
-                          input(type="text" placeholder=item[2]).form-block__input
+                    label.form__block
+                      p.form__field-title #{item[1]}
+                      .form__field
+                        +icon(`${item[0]}`, 'form__icon')
+                        input(
+                          type=item[4] 
+                          name=item[3] 
+                          placeholder=item[2]
+                          required
+                        ).form__input
+                        .form__error
                 .form__row.form__row_extra-margin
-                  label.form-block(data-title="Сообщение к письму")
-                    .form-block__container.form-block__container_align_top
-                      +icon('message', 'form-block__icon') 
-                      .form-block__field
+                  label.form__block
+                      p.form__field-title Сообщение к письму
+                      .form__field
+                        +icon('message', 'form__icon')
                         textarea(
+                          name="comment"
                           placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса"
-                        ).form-block__input.form-block__input_textarea
+                          required
+                        ).form__input.form__input_textarea
+                        .form__error
                 .from__row
                   button.form__button(type="submit") Отправить
                     

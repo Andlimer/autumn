@@ -27,37 +27,13 @@
   }
 }
 
-.form-block {
-  margin-right: 95px;
-  border-bottom: 2px solid $text-color;
-  padding-bottom: 19px;
+.form__block {
+  position: relative;
   flex: 1;
-  transition: border-color .4s;
+  margin-right: 95px;
 
   &:last-child {
     margin-right: 0;
-  }
-
-  &:before {
-    content: attr(data-title);
-    margin-bottom: 30px;
-    display: block;
-    font-weight: 600;
-    color: $text-color;
-    margin-left: 45px;
-  }
-
-  &:focus-within {
-    border-color: $main-color;
-
-    .form-block__icon {
-      fill: $main-color;
-      opacity: 1;
-    }
-  }
-
-  @include desktop {
-    border-color: $sec-text-color;
   }
 
   @include phones-hd {
@@ -70,30 +46,36 @@
   }
 }
 
-.form-block__container {
-  display: flex;
-  align-items: center;
+.form__field-title {
+  margin-left: 50px;
+}
 
-  &_align_top {
-    align-items: flex-start;
+.form__field {
+  display: flex;
+  margin-top: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid $text-color;
+  transition: border-color .4s;
+
+  &:focus-within {
+    border-color: $main-color;
+
+    .form__icon {
+      fill: $main-color;
+    }
   }
 }
 
-.form-block__icon {
+.form__icon {
   width: 30px;
   height: 30px;
   fill: $text-color;
-  opacity: .3;
-  margin-right: 16px;
-  transition: fill .4s, opacity .4s;
+  margin-right: 20px;
+  transition: fill .4s;
 }
 
-.form-block__field {
+.form__input {
   flex: 1;
-}
-
-.form-block__input {
-  width: 100%;
   font-size: 18px;
   font-weight: 700;
   border: none;
@@ -110,7 +92,7 @@
   }
 }
 
-.form-block__input_textarea {
+.form__input_textarea {
   height: 65px;
   line-height: 30px;
   resize: none;
@@ -125,6 +107,27 @@
 
   @include phones {
     height: 100px;
+  }
+}
+
+.form__error {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50px;
+  padding: 15px 20px;
+  font-size: 14px;
+  line-height: 1;
+  color: $sec-text-color;
+  background-color: $error-color;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -23px;
+    left: 60px;
+    border: 15px solid transparent;
+    border-bottom: 10px solid $error-color;
   }
 }
 
