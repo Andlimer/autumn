@@ -140,3 +140,166 @@
               )
               button.groups__new-skill-add +
 </template>
+
+<style lang="postcss">
+  .about {
+    padding-top: 60px;
+  }
+
+  .about__title {
+    display: flex;
+    align-items: center;
+  }
+
+  .new-group {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+  }
+
+  .new-group__icon {
+    position: relative;
+    margin-right: 20px;
+    width: 21px;
+    height: 21px;
+    background-image: $admin-btn-color;
+    border-radius: 50%;
+
+    &:after {
+      content: '+';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 15px;
+      color: $sec-text-color;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .new-group__text {
+    font-size: 16px;
+    font-weight: 600;
+    color: $admin-main-color;
+  }
+
+  .groups__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .groups__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding: 30px 20px;
+    width: 49%;
+    height: 410px;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    background-color: $sec-text-color;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  .groups__header {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin-bottom: 20px;
+    padding: 0px 10px 14px 10px;
+    border-bottom: 1px solid $input-color; 
+  }
+
+  .groups__title {
+    width: 60%;
+  }
+
+  .skills {
+    height: 100%;
+  }
+
+  .skills__item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 8px 16px 8px;
+  }
+
+  .skills__row {
+    width: 80%;
+  }
+
+  .skills__input {
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid #000;
+
+    &:disabled {
+      border-bottom: 1px solid transparent;
+      background-color: transparent;
+    }
+  }
+
+  .skills__skill-name {
+    margin-right: 5%;
+    width: 75%;
+  }
+
+  .skills__skill-percent {
+    padding-left: 10px;
+    width: 20%;
+  }
+
+  .group-buttons {
+
+    .button-icon {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .group-buttons-change {
+    /* display: none; */
+  }
+
+  .group-buttons-save {
+    display: none;
+  }
+
+  .groups__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .groups__new-skill-name {
+    margin-right: 10px;
+    padding-left: 20px;
+    width: 40%;
+    font-size: 16px;
+  }
+
+  .groups__new-skill-percent {
+    margin-right: 30px;
+    padding-left: 10px;
+    width: 15%;
+    font-size: 16px;
+  }
+
+  .groups__new-skill-add {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    color: $sec-text-color;
+    background-image: $admin-btn-color;
+    border-radius: 50%;
+  }
+</style>

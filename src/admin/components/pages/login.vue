@@ -6,7 +6,7 @@
         label.login__block
           p.login__field-title Логин
           .login__field
-            .login__icon
+            .login__icon.login__icon_user
             input(
               type="text"
               name="user.name"
@@ -16,7 +16,7 @@
         label.login__block
           p.login__field-title Пароль
           .login__field
-            .login__icon
+            .login__icon.login__icon_password
             input(
               type="password"
               name="user.password"
@@ -63,6 +63,10 @@ export default {
   }
 
   .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 60px 75px;
     background-color: $sec-text-color;
     z-index: 10;
@@ -81,18 +85,20 @@ export default {
   }
 
   .login__field-title {
-    margin-left: 50px;
+    margin-left: 55px;
+    font-weight: 600;
+    color: $input-color;
   }
 
   .login__field {
     display: flex;
     margin-top: 25px;
     padding-bottom: 15px;
-    border-bottom: 2px solid $text-color;
+    border-bottom: 2px solid $input-color;
     transition: border-color .4s;
 
     &:focus-within {
-      border-color: $main-color;
+      border-color: $admin-text-color;
     }
 
     &_error {
@@ -111,7 +117,7 @@ export default {
     }
 
     &_password {
-      
+      background: svg-load("key.svg", fill=$input-color, width=100%, height=100%) no-repeat;
     }
   }
 
@@ -121,8 +127,17 @@ export default {
     font-weight: 700;
     border: none;
     background: transparent;
-    color: $sec-text-color;
     outline: none;
+  }
+
+  .login__send-data {
+    padding: 35px 120px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $sec-text-color;
+    background-image: linear-gradient(to right, #ad00ed 0%, #5500f2 100%);
+    border-radius: 50px 5px;
   }
 
 </style>

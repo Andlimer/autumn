@@ -64,3 +64,144 @@
                 button.btn-change.btn-change_del Удалить
                   span.btn-change__icon-del
 </template>
+
+<style lang="postcss">
+  .reviews__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .reviews__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    width: 32%;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    background-color: #fff;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  .new-review {
+    padding-bottom: 50px;
+  }
+
+  .new-review__content {
+    padding: 0px 10px;
+    display: flex;
+  }
+
+  .new-review__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 30px;
+  }
+
+  .new-review__right {
+    width: 620px;
+  }
+
+  .new-review__photo {
+    margin-bottom: 30px;
+    width: 200px;
+    height: 200px;
+    background-image: svg-load("user-review.svg", fill=#fff,  width=105px, height=133px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #dee4ed;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .new-review__add-photo {
+    font-weight: 600;
+    color: $admin-main-color;
+    text-decoration: none;
+  }
+
+  .new-review__row {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .new-review__block {
+    margin-right: 30px;
+    width: 100%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .new-review__input {
+    width: 100%;
+  }
+
+  .new-review__input {
+    padding: 20px;
+  }
+
+  .new-review__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+  }
+
+  .review__title {
+    margin-bottom: 30px;
+    padding: 0px 10px 30px;
+    border-bottom: 1px solid $input-color;
+  }
+
+  .review-user {
+    display: flex;
+  }
+
+  .review-user__image {
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .review-user__name {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .review-user__desc {;
+    font-weight: 600;
+    color: $input-color;
+  }
+
+  .review__content {
+    padding: 0px 10px;
+  }
+
+  .review__text {
+    padding-right: 15px;
+    font-weight: 600;
+    line-height: 30px;
+    opacity: .7;
+  }
+
+  .review__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+</style>
