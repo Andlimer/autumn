@@ -66,6 +66,10 @@
 </template>
 
 <style lang="postcss">
+  .reviews {
+    padding-top: 60px;
+  }
+
   .reviews__list {
     display: flex;
     flex-wrap: wrap;

@@ -1,11 +1,13 @@
 <template lang="pug">
   .container
     ul.nav__list
-      li.nav__item(v-for="tab in tabs")
-        a.nav__link(
-          :href="tab.href"
-          exact-active-class="active"
-        ) {{ tab.title }}
+      li(v-for="tab in tabs").nav__item
+        router-link(
+          :data-text="tab.title"
+          :to="tab.href"
+          exact-active-class="nav__link_active"
+        ).nav__link
+
 </template>
 
 <script>
@@ -43,7 +45,12 @@ export default {
     text-decoration: none;
     transition: color .4s;
 
-    &:hover {
+    &:before {
+      content: attr(data-text);
+    }
+
+    &:hover,
+    &_active {
       color: $admin-main-color;
     }
 
@@ -60,17 +67,9 @@ export default {
       transition: width .4s;
     }
 
-    &:hover:after {
+    &:hover:after,
+    &_active:after {
       width: 125px;
     }
   }
-
-  /* .nav__item_active {
-    .nav__link {
-      color: $admin-main-color;
-    }
-    .nav__link:after {
-      width: 125px;
-    }
-  } */
 </style>

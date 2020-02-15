@@ -6,8 +6,9 @@ Vue.use(VueRouter);
 import about from './components/pages/about';
 import works from './components/pages/works';
 import reviews from './components/pages/reviews';
+import login from './components/pages/login';
 
-const routers = [
+const routes = [
   {
     path: '/',
     component: about
@@ -19,8 +20,12 @@ const routers = [
   {
     path: '/reviews',
     component: reviews
+  },
+  {
+    path: '/login',
+    component: login
   }
 ];
 
-export default new VueRouter({routers});
+export default new VueRouter({routes});
 

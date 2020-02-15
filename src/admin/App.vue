@@ -1,25 +1,16 @@
 <template lang="pug">
   .page-content
-    //- login
     header.header
       appHeader
     nav.nav
       appTabs
     main.content
       router-view
-      //- about
-      //- works
-      //- reviews
 </template>
 
 <script>
 import header from './components/header';
 import tabs from './components/tabs';
-// pages
-// import login from './components/pages/login';
-// import about from './components/pages/about';
-// import works from './components/pages/works';
-// import reviews from './components/pages/reviews';
 
 export default {
   name: 'app',
