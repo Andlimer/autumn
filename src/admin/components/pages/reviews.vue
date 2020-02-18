@@ -52,7 +52,7 @@
             .review__title
               .review-user
                 .review-user__image
-                  img.review-user__img(src="../../../images/content/user-photo1.jpg")
+                  img.review-user__img(src="../../../images/content/user-photo2.jpg")
                 .review-user__text
                   .review-user__name Владимир Сабанцев
                   .review-user__desc Преподаватель
@@ -66,6 +66,8 @@
 </template>
 
 <style lang="postcss">
+@import "../../../styles/mixins.pcss";
+
   .reviews {
     padding-top: 60px;
   }
@@ -87,6 +89,21 @@
 
     &:nth-child(3n) {
       margin-right: 0;
+
+      @include laptop {
+        margin-right: 2%;
+      }
+    }
+
+    &:nth-child(2n) {
+
+      @include laptop {
+        margin-right: 0;
+      }
+    }
+
+    @include laptop {
+      width: 49%;
     }
   }
 
@@ -105,10 +122,19 @@
     justify-content: flex-start;
     align-items: center;
     margin-right: 30px;
+
+    @include tablets {
+      width: 30%;
+      margin-right: 5%;
+    }
   }
 
   .new-review__right {
     width: 620px;
+
+    @include tablets {
+      width: 65%;
+    }
   }
 
   .new-review__photo {
@@ -132,6 +158,10 @@
   .new-review__row {
     display: flex;
     margin-bottom: 30px;
+
+    @include tablets {
+      flex-wrap: wrap;
+    }
   }
 
   .new-review__block {
@@ -141,14 +171,28 @@
     &:last-child {
       margin-right: 0;
     }
-  }
 
-  .new-review__input {
-    width: 100%;
+    @include tablets {
+      margin-right: 0;
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .new-review__input {
     padding: 20px;
+    width: 100%;
+
+    @include tablets {
+      width: 70%;
+    }
+  }
+
+  .form__input_textarea {
+    width: 100%;
   }
 
   .new-review__buttons {
@@ -165,12 +209,13 @@
 
   .review__title {
     margin-bottom: 30px;
-    padding: 0px 10px 30px;
+    padding-bottom: 30px;
     border-bottom: 1px solid $input-color;
   }
 
   .review-user {
     display: flex;
+    align-items: center;
   }
 
   .review-user__image {

@@ -1,185 +1,59 @@
 <template lang="pug">
   section.about
     .container
-      h2.section-title.about__title Блок «Обо мне»
-        a.new-group
-          span.new-group__icon
-          span.new-group__text Добавить группу
+      .about__title
+        h1.page-title Блок «Обо мне»
+        form.categories-form
+          button.about__add-group Добавить группу
 
-      .groups
-        ul.groups__list
-
-          li.groups__item
-            .groups__header
-              input.input.groups__title(
-                type="text" 
-                placeholder="Название новой группы"
-              )
-              .group-buttons
-                button.button-icon.button-icon_tick
-                button.button-icon.button-icon_remove
-            
-            .groups__footer
-              input.input.groups__new-skill-name(
-                type="text" 
-                placeholder="Новый навык"
-              )
-              input.input.groups__new-skill-percent(
-                type="number" 
-                placeholder="100 %"
-              )
-              button.groups__new-skill-add +
-
-          li.groups__item
-            .groups__header
-              input.input.groups__title(
-                type="text" 
-                placeholder="Название новой группы"
-                value="Frontend"
-                disabled
-              )
-              .group-buttons
-                .group-buttons-change
-                  button.button-icon.button-icon_pencil
-                .group-buttons-save
-                  button.button-icon.button-icon_tick
-                  button.button-icon.button-icon_remove
-            .skills
-              ul.skills__list
-                -
-                  var items = [
-                    ["HTML5", "100"],
-                    ["CSS3", "90"],
-                    ["JavaScript", "80"],
-                    ["Jquery и Vue.js", "85"]
-                  ];
-                each item in items
-                  li.skills__item
-                    .skills__row
-                      input.skills__input.skills__skill-name(
-                        type="text"
-                        value=`${item[0]}`
-                        disabled
-                      )
-                      input.skills__input.skills__skill-percent(
-                        type="number"
-                        value=`${item[1]}`
-                        disabled
-                      )
-                    .group-buttons
-                      .group-buttons-change
-                        button.button-icon.button-icon_pencil
-                        button.button-icon.button-icon_trash
-                      .group-buttons-save
-                        button.button-icon.button-icon_tick
-                        button.button-icon.button-icon_remove
-
-            .groups__footer
-              input.input.groups__new-skill-name(
-                type="text" 
-                placeholder="Новый навык"
-              )
-              input.input.groups__new-skill-percent(
-                type="number" 
-                placeholder="100 %"
-              )
-              button.groups__new-skill-add +
-
-          li.groups__item
-            .groups__header
-              input.input.groups__title(
-                type="text" 
-                placeholder="Название новой группы"
-                value="Workflow"
-                disabled
-              )
-              .group-buttons
-                .group-buttons-change
-                  button.button-icon.button-icon_pencil
-                .group-buttons-save
-                  button.button-icon.button-icon_tick
-                  button.button-icon.button-icon_remove
-            .skills
-              ul.skills__list
-                -
-                  var items = [
-                    ["Git", "30"],
-                    ["Terminal", "20"],
-                    ["Gulp", "10"],
-                    ["Webpack", "25"]
-                  ];
-                each item in items
-                  li.skills__item
-                    .skills__row
-                      input.skills__input.skills__skill-name(
-                        type="text"
-                        value=`${item[0]}`
-                        disabled
-                      )
-                      input.skills__input.skills__skill-percent(
-                        type="number"
-                        value=`${item[1]}`
-                        disabled
-                      )
-                    .group-buttons
-                      .group-buttons-change
-                        button.button-icon.button-icon_pencil
-                        button.button-icon.button-icon_trash
-                      .group-buttons-save
-                        button.button-icon.button-icon_tick
-                        button.button-icon.button-icon_remove
-
-            .groups__footer
-              input.input.groups__new-skill-name(
-                type="text" 
-                placeholder="Новый навык"
-              )
-              input.input.groups__new-skill-percent(
-                type="number" 
-                placeholder="100 %"
-              )
-              button.groups__new-skill-add +
+    .about__content
+      .container.container_mobile
+        .groups
+          ul.groups__list
+            li.groups__item
+              skills-group
 </template>
 
+<script>
+export default {
+  components: {
+    skillsGroup: () => import("../skills-group")
+  }
+}
+</script>
+
 <style lang="postcss">
+
   .about {
-    padding-top: 60px;
+    padding: 60px 0px;
   }
 
   .about__title {
     display: flex;
     align-items: center;
+    margin-bottom: 60px;
   }
 
-  .new-group {
+  .about__add-group {
     display: flex;
     align-items: center;
     margin-left: 60px;
-  }
-
-  .new-group__icon {
-    position: relative;
-    margin-right: 20px;
-    width: 21px;
-    height: 21px;
-    background-image: $admin-btn-color;
-    border-radius: 50%;
-
-    &:after {
-      content: '+';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      font-size: 15px;
-      color: $sec-text-color;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .new-group__text {
-    font-size: 16px;
-    font-weight: 600;
+    padding: 0;
+    font-weight: 700;
     color: $admin-main-color;
+    background: transparent;
+
+    &:before {
+      content: '+';
+      display: block;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background-image: $admin-btn-color;
+      line-height: 23px;
+      color: #fff;
+      margin-right: 13px;
+    }
   }
 
   .groups__list {
@@ -200,22 +74,77 @@
     background-color: $sec-text-color;
 
     &:nth-child(2n) {
-      margin-right: 0;
+      margin-right: 0; /* Изменить на отрицательный margin */
     }
   }
 
-  .groups__header {
+/* перенести в skills-group.vue */
+
+  .skills-group__header {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     margin-bottom: 20px;
     padding: 0px 10px 14px 10px;
     border-bottom: 1px solid $input-color; 
   }
 
-  .groups__title {
+  .skills-group__title {
     width: 60%;
   }
+
+  .skills-group-buttons {
+
+    .button-icon {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .group-buttons-change {
+    /* display: none; */
+  }
+
+  .group-buttons-save {
+    display: none;
+  }
+
+  .group__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .group__new-skill-name {
+    margin-right: 10px;
+    padding-left: 20px;
+    width: 40%;
+    font-size: 16px;
+  }
+
+  .group__new-skill-percent {
+    margin-right: 30px;
+    padding-left: 10px;
+    width: 15%;
+    font-size: 16px;
+  }
+
+  .group__new-skill-add {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    color: $sec-text-color;
+    background-image: $admin-btn-color;
+    border-radius: 50%;
+  }
+
+
+
+
+
 
   .skills {
     height: 100%;
@@ -252,54 +181,5 @@
   .skills__skill-percent {
     padding-left: 10px;
     width: 20%;
-  }
-
-  .group-buttons {
-
-    .button-icon {
-      margin-right: 20px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  .group-buttons-change {
-    /* display: none; */
-  }
-
-  .group-buttons-save {
-    display: none;
-  }
-
-  .groups__footer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .groups__new-skill-name {
-    margin-right: 10px;
-    padding-left: 20px;
-    width: 40%;
-    font-size: 16px;
-  }
-
-  .groups__new-skill-percent {
-    margin-right: 30px;
-    padding-left: 10px;
-    width: 15%;
-    font-size: 16px;
-  }
-
-  .groups__new-skill-add {
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    font-weight: 600;
-    color: $sec-text-color;
-    background-image: $admin-btn-color;
-    border-radius: 50%;
   }
 </style>

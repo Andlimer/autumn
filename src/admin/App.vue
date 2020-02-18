@@ -1,27 +1,19 @@
 <template lang="pug">
   .page-content
     header.header
-      appHeader
+      app-header
     nav.nav
-      appTabs
+      tabs
     main.content
       router-view
 </template>
 
 <script>
-import header from './components/header';
-import tabs from './components/tabs';
-
 export default {
   name: 'app',
   components: {
-    appHeader: header,
-    appTabs: tabs
-  },
-  data () {
-    return {
-
-    }
+    appHeader: () => import("./components/header"),
+    tabs: () => import("./components/tabs")
   }
 }
 </script>
@@ -41,8 +33,7 @@ export default {
     background-color: #f7f9fe;
   }
 
-  .section-title {
-    margin-bottom: 60px;
+  .page-title {
     font-size: 21px;
     font-weight: 700;
     line-height: 1;
@@ -91,6 +82,7 @@ export default {
   .form__input_textarea {
     padding: 20px 80px 20px 20px;
     height: 150px;
+    width: 100%;
     font-weight: 600;
     line-height: 30px;
     border: 1px solid $input-color;

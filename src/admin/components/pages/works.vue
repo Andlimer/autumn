@@ -111,6 +111,8 @@
 </template>
 
 <style lang="postcss">
+@import "../../../styles/mixins.pcss";
+
   .works {
     padding-top: 60px;
   }
@@ -122,15 +124,30 @@
   .new-work__content {
     display: flex;
     padding: 0px 10px;
+
+    @include tablets {
+      display: block;
+      padding: 0px 13%;
+    }
   }
 
   .new-work__left {
     width: 50%;
     margin-right: 30px;
+
+    @include tablets {
+      margin-right: 0;
+      margin-bottom: 55px;
+      width: 100%;
+    }
   }
 
   .new-work__right {
     width: 50%;
+
+    @include tablets {
+      width: 100%;
+    }
   }
 
   .add-work {
@@ -229,6 +246,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    @include tablets {
+      justify-content: center;
+    }
   }
 
   .works__list {
@@ -248,6 +269,21 @@
 
     &:nth-child(3n) {
       margin-right: 0;
+
+      @include tablets {
+        margin-right: 2%;
+      }
+    }
+
+    &:nth-child(2n) {
+
+      @include tablets {
+        margin-right: 0;
+      }
+    }
+
+    @include tablets {
+      width: 49%;
     }
   }
 

@@ -25,6 +25,8 @@ export default {
 </script>
 
 <style lang="postcss">
+@import "../../styles/mixins.pcss";
+
   .nav {
     background-color: $sec-text-color;
   }
@@ -33,10 +35,23 @@ export default {
     display: flex;
     align-items: center;
     padding: 30px;
+
+    @include phones {
+      justify-content: center;
+      padding: 30px 20px;
+    }
   }
 
   .nav__item {
     margin-right: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include phones {
+      margin-right: 40px;
+    }
   }
 
   .nav__link {
@@ -70,6 +85,14 @@ export default {
     &:hover:after,
     &_active:after {
       width: 125px;
+
+      @include phones {
+        width: 90px;
+      }
+    }
+
+    @include phones {
+      font-size: 14px;
     }
   }
 </style>

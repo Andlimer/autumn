@@ -10,7 +10,6 @@
             input(
               type="text"
               name="user.name"
-              required
             ).login__input
       .login__row
         label.login__block
@@ -20,10 +19,10 @@
             input(
               type="password"
               name="user.password"
-              required
             ).login__input
       .login__button
         button(type="submit").login__send-data Отправить
+        button(type="close").login__close
 </template>
 
 <script>
@@ -38,6 +37,8 @@ export default {
 </script>
 
 <style lang="postcss">
+@import "../../../styles/mixins.pcss";
+
   .login-container {
     position: fixed;
     top: 0;
@@ -63,13 +64,19 @@ export default {
   }
 
   .login {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 60px 75px;
     background-color: $sec-text-color;
-    z-index: 10;
+
+    @include phones {
+      padding: 0px 30px;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .login__title {
@@ -77,11 +84,15 @@ export default {
     font-size: 36px;
     font-weight: 600;
     line-height: 1;
+
+    @include phones {
+      font-size: 30px;
+    }
   }
 
   .login__row {
     margin-bottom: 40px;
-    width: 400px;
+    width: 100%;
   }
 
   .login__field-title {
@@ -100,10 +111,6 @@ export default {
     &:focus-within {
       border-color: $admin-text-color;
     }
-
-    &_error {
-      border-color: $error-color;
-    }
   }
 
   .login__icon {
@@ -113,11 +120,11 @@ export default {
     transition: background .4s;
 
     &_user {
-      background: svg-load("user.svg", fill=$input-color, width=100%, height=100%) no-repeat;
+      background: svg-load("user.svg", fill=$input-color, width=100%, height=100%) center no-repeat;
     }
 
     &_password {
-      background: svg-load("key.svg", fill=$input-color, width=100%, height=100%) no-repeat;
+      background: svg-load("key.svg", fill=$input-color, width=100%, height=100%) center no-repeat;
     }
   }
 
@@ -138,6 +145,20 @@ export default {
     color: $sec-text-color;
     background-image: linear-gradient(to right, #ad00ed 0%, #5500f2 100%);
     border-radius: 50px 5px;
+
+    @include phones {
+      padding: 35px 95px;
+    }
+  }
+
+  .login__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 0;
+    width: 23px;
+    height: 23px;
+    background: svg-load("close.svg", fill=$admin-text-color, width=100%, height=100%) no-repeat;
   }
 
 </style>
