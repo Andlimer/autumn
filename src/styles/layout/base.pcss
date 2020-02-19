@@ -32,8 +32,13 @@ body {
   width: 95%;
   // width: 1490px;
 
-  @include phones {
+  @include phones-hd {
     width: 85%;
+
+    &_mobile {
+      margin: 0;
+      width: 100%;
+    }
   }
 }
 

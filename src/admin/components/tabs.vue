@@ -3,10 +3,9 @@
     ul.nav__list
       li(v-for="tab in tabs").nav__item
         router-link(
-          :data-text="tab.title"
           :to="tab.href"
           exact-active-class="nav__link_active"
-        ).nav__link
+        ).nav__link {{ tab.title }}
 
 </template>
 
@@ -59,10 +58,6 @@ export default {
     font-weight: 600;
     text-decoration: none;
     transition: color .4s;
-
-    &:before {
-      content: attr(data-text);
-    }
 
     &:hover,
     &_active {

@@ -1,7 +1,7 @@
 <template lang="pug">
   section.reviews
     .container
-      h2.section-title.reviews__title Блок «Отзывы»
+      h2.page-title.reviews__title Блок «Отзывы»
       form.form.new-review
         h3.form__title.new-review__title Новый отзыв
         .new-review__content
@@ -70,6 +70,10 @@
 
   .reviews {
     padding-top: 60px;
+  }
+
+  .reviews__title {
+    margin-bottom: 60px;
   }
 
   .reviews__list {

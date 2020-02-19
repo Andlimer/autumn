@@ -89,23 +89,24 @@ export default {
     resize: none;
   }
 
-  .button-icon {
+  .btns {
+    padding: 0;
     width: 15px;
     height: 15px;
 
-    &_pencil {
+    &_edit {
       background: svg-load("pencil.svg", fill=$input-color, width=100%, height=100%) no-repeat;
     }
 
-    &_trash {
+    &_remove {
       background: svg-load("trash.svg", fill=$input-color, width=100%, height=100%) no-repeat;
     }
 
-    &_tick {
+    &_ok {
       background: svg-load("tick.svg", fill=#00d70a, width=100%, height=100%) no-repeat;
     }
 
-    &_remove {
+    &_cancell {
       background: svg-load("remove.svg", fill=#bf2929, width=100%, height=100%) no-repeat;
     }
   }
