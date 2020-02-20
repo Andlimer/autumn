@@ -208,6 +208,10 @@ export default {
     flex-wrap: wrap;
     margin-left: -30px;
 
+    @include laptop {
+      margin-left: -20px;
+    }
+
     @include tablets {
       margin-left: 0;
     }
@@ -224,6 +228,11 @@ export default {
     min-height: 410px;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
     background-color: $sec-text-color;
+
+    @include laptop {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
 
     @include tablets {
       padding: 30px 0;
@@ -258,6 +267,10 @@ export default {
     width: 60%;
     font-size: 18px;
 
+    @include laptop {
+      width: 75%;
+    }
+
     @include phones-hd {
       width: 80%;
     }
@@ -279,6 +292,10 @@ export default {
     justify-content: flex-end;
     align-items: center;
 
+    @include tablets {
+      padding: 0px 20px;
+    }
+
     @include phones-hd {
       justify-content: center;
       padding: 0px 20px;
@@ -288,9 +305,9 @@ export default {
   .add-skill__name {
     margin-right: 15px;
     padding-left: 20px;
-    width: 40%;
+    width: 220px;
 
-    @include phones-hd {
+    @include laptop {
       width: 50%;
     }
   }
@@ -298,7 +315,7 @@ export default {
   .add-skill__field {
     position: relative;
     margin-right: 30px;
-    width: 15%;
+    width: 70px;
 
     &:after {
       content: '%';
@@ -309,9 +326,9 @@ export default {
       color: $input-color;
     }
 
-    @include phones-hd {
+    /* @include phones-hd {
       width: 23%;
-    }
+    } */
   }
 
   .add-skill__percent {
@@ -371,20 +388,20 @@ export default {
 
   .skills__field {
     position: relative;
-    width: 20%;
+    width: 60px;
 
     &:after {
       content: '%';
       position: absolute;
       top: 0;
-      right: 10px;
+      right: 0;
       font-weight: 600;
       color: $input-color;
     }
 
-    @include phones-hd {
-      width: 35%;
-    }
+    /* @include phones-hd {
+      width: 50px;
+    } */
   }
 
   .skills__input_percent {
