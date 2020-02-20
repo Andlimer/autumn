@@ -171,7 +171,6 @@ export default {
 
     @include phones {
       display: block;
-      /* flex-wrap: wrap; */
       margin-bottom: 40px;
     }
   }
@@ -230,6 +229,7 @@ export default {
     background-color: $sec-text-color;
 
     @include laptop {
+      width: calc(100% / 2 - 20px);
       margin-left: 20px;
       margin-bottom: 20px;
     }

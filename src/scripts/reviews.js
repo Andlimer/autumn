@@ -18,7 +18,22 @@ new Vue ({
         },
         slidesPerView: 2,
         slidesPerGroup: 2,
-        spaceBetween: 0
+        spaceBetween: 80,
+        breakpoints: {
+          1200: {
+              slidesPerView: 2,
+              spaceBetween: 20
+          },
+          768: {
+              slidesPerView: 2,
+              spaceBetween: 20
+          },
+          568: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+              slidesPerGroup: 1
+          }
+        }
       }
     }
   },

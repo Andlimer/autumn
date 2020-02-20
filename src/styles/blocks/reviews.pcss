@@ -64,4 +64,13 @@
 
 .reviews__content {
   width: 920px;
+  // overflow: hidden;
+
+  @include laptop {
+    width: 95%;
+  }
+
+  @include tablets {
+    width: 100%;
+  }
 }

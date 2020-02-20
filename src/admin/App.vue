@@ -65,10 +65,14 @@ export default {
 
   .form {
     padding: 30px 20px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     width: 100%;
     background-color: #fff;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+
+    @include phones-hd {
+      padding: 30px 0;
+    }
   }
 
   .form__title {
@@ -77,6 +81,10 @@ export default {
     font-size: 18px;
     font-weight: 700;
     border-bottom: 1px solid $input-color;
+
+    @include phones-hd {
+      padding: 0 20px 30px;
+    }
   }
 
   .form__input_textarea {

@@ -2,6 +2,7 @@
   section.reviews
     .container
       h2.page-title.reviews__title Блок «Отзывы»
+    .container.container_mobile
       form.form.new-review
         h3.form__title.new-review__title Новый отзыв
         .new-review__content
@@ -69,55 +70,61 @@
 @import "../../../styles/mixins.pcss";
 
   .reviews {
-    padding-top: 60px;
+    padding: 60px 0;
+
+    @include phones-hd {
+      padding: 40px 0;
+    }
   }
 
   .reviews__title {
     margin-bottom: 60px;
+
+    @include phones-hd {
+      margin-bottom: 40px;
+    }
   }
 
   .reviews__list {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -30px;
   }
 
   .reviews__item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 2%;
-    margin-bottom: 2%;
-    width: 32%;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: calc(100% / 2 - 30px);
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
     background-color: #fff;
 
-    &:nth-child(3n) {
-      margin-right: 0;
-
-      @include laptop {
-        margin-right: 2%;
-      }
-    }
-
-    &:nth-child(2n) {
-
-      @include laptop {
-        margin-right: 0;
-      }
-    }
-
-    @include laptop {
-      width: 49%;
+    @include phones-hd {
+      width: 100%;
+      margin-bottom: 10px;
     }
   }
 
   .new-review {
+    margin-bottom: 30px;
     padding-bottom: 50px;
+
+    @include phones-hd {
+      margin-bottom: 10px;
+    }
   }
 
   .new-review__content {
     padding: 0px 10px;
     display: flex;
+
+    @include phones-hd {
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 20px;
+    }
   }
 
   .new-review__left {
@@ -131,6 +138,12 @@
       width: 30%;
       margin-right: 5%;
     }
+
+    @include phones-hd {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 50px;
+    }
   }
 
   .new-review__right {
@@ -138,6 +151,10 @@
 
     @include tablets {
       width: 65%;
+    }
+
+    @include phones-hd {
+      width: 100%;
     }
   }
 
@@ -187,15 +204,19 @@
   }
 
   .new-review__input {
-    padding: 20px;
     width: 100%;
 
     @include tablets {
       width: 70%;
     }
+
+    @include phones-hd {
+      width: 100%;
+    }
   }
 
   .form__input_textarea {
+    padding: 20px;
     width: 100%;
   }
 

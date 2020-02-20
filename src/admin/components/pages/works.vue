@@ -117,11 +117,27 @@
 @import "../../../styles/mixins.pcss";
 
   .works {
-    padding-top: 60px;
+    padding: 60px 0;
+
+    @include phones-hd {
+      padding: 40px 0;
+    }
   }
 
   .works__title {
     margin-bottom: 60px;
+
+    @include phones-hd {
+      margin-bottom: 40px;
+    }
+  }
+
+  .new-work {
+    margin-bottom: 30px;
+
+    @include phones-hd {
+      margin-bottom: 10px;
+    }
   }
 
   .new-work__content {
@@ -131,6 +147,10 @@
     @include tablets {
       display: block;
       padding: 0px 13%;
+    }
+
+    @include phones-hd {
+      padding: 0 20px;
     }
   }
 
@@ -258,35 +278,26 @@
   .works__list {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -30px;
   }
 
   .works__item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 2%;
-    margin-bottom: 2%;
-    width: 32%;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: calc(100% / 3 - 30px);
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
     background-color: #fff;
 
-    &:nth-child(3n) {
-      margin-right: 0;
-
-      @include tablets {
-        margin-right: 2%;
-      }
+    @include laptop {
+      width: calc(100% / 2 - 30px);
     }
 
-    &:nth-child(2n) {
-
-      @include tablets {
-        margin-right: 0;
-      }
-    }
-
-    @include tablets {
-      width: 49%;
+    @include phones-hd {
+      width: 100%;
+      margin-bottom: 10px;
     }
   }
 
@@ -296,6 +307,10 @@
 
   .work__image {
     margin-bottom: 40px;
+
+    @include phones-hd {
+      margin-bottom: 30px;
+    }
   }
 
   .work__content {
@@ -313,6 +328,10 @@
     font-weight: 600;
     line-height: 30px;
     color: $input-color;
+
+    @include phones-hd {
+      margin-bottom: 20px;
+    }
   }
 
   .work__link {
@@ -321,6 +340,10 @@
     font-weight: 600;
     text-decoration: none;
     color: $admin-main-color;
+
+    @include phones-hd {
+      margin-bottom: 35px;
+    }
   }
 
   .work__buttons {
@@ -382,10 +405,21 @@
         height: 2px;
         background-color: $sec-text-color;
         transform: translate(-50%, -50%);
+
+        @include phones-hd {
+          width: 14px;
+        }
       }
 
       &:before {
         transform: translate(-50%, -50%) rotate(90deg);
+      }
+
+      @include phones-hd {
+        margin-right: 20px;
+        margin-bottom: 0;
+        width: 60px;
+        height: 60px;
       }
     }
 
@@ -394,6 +428,15 @@
       font-size: 18px;
       font-weight: 700;
       line-height: 30px;
+
+      @include phones-hd {
+        width: auto;
+      }
+    }
+
+    @include phones-hd {
+      flex-direction: row;
+      padding: 30px;
     }
   }
 </style>
