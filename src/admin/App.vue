@@ -10,7 +10,6 @@
 
 <script>
 export default {
-  name: 'app',
   components: {
     appHeader: () => import("./components/header"),
     tabs: () => import("./components/tabs")
@@ -19,7 +18,6 @@ export default {
 </script>
 
 <style lang="postcss">
-  /* import стилей */
   @import "normalize.css";
   @import "../styles/mixins.pcss";
   @import "../styles/layout/base.pcss";
@@ -65,7 +63,6 @@ export default {
 
   .form {
     padding: 30px 20px;
-    /* margin-bottom: 30px; */
     width: 100%;
     background-color: #fff;
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
