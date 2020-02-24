@@ -1,6 +1,6 @@
 <template lang="pug">
   .login-container
-    form.login
+    form(@submit.prevent="login").login
       .login__title Авторизация
       .login__row
         label.login__block
@@ -10,6 +10,7 @@
             input(
               type="text"
               name="user.name"
+              v-model="user.name"
             ).login__input
       .login__row
         label.login__block
@@ -19,20 +20,44 @@
             input(
               type="password"
               name="user.password"
+              v-model="user.password"
             ).login__input
       .login__button
-        button(type="submit").login__send-data Отправить
-        button(type="close").login__close
+        button(
+          type="submit"
+        ).login__send-data Отправить
+        button(
+          type="close"
+        ).login__close
 </template>
 
 <script>
+import $axios from "../../requests";
+
 export default {
   data: () => ({
     user: {
       name: "",
       password: ""
     }
-  })
+  }),
+  methods: {
+    async login() {
+      try {
+        const response = await $axios.post("/login", this.user);
+        const token = response.data.token;
+
+        localStorage.setItem("token", token);
+        $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+
+        this.$router.replace("/");
+
+        console.log(response);
+      } catch(error) {
+
+      }
+    }
+  }
 }
 </script>
 

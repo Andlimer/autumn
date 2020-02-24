@@ -3,27 +3,22 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-import about from './components/pages/about';
-import works from './components/pages/works';
-import reviews from './components/pages/reviews';
-import login from './components/pages/login';
-
 const routes = [
   {
     path: '/',
-    component: about
+    component: () => import("./components/pages/about")
   },
   {
     path: '/works',
-    component: works
+    component: () => import("./components/pages/works")
   },
   {
     path: '/reviews',
-    component: reviews
+    component: () => import("./components/pages/reviews")
   },
   {
     path: '/login',
-    component: login
+    component: () => import("./components/pages/login")
   }
 ];
 

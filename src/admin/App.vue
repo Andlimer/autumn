@@ -27,8 +27,9 @@ export default {
     color: $admin-text-color;
   }
 
-  .page-content {
+  .admin-wrapper {
     background-color: #f7f9fe;
+    /* background: url("~images/content/admin-bg.jpg") center center / cover no-repeat; */
   }
 
   .page-title {
