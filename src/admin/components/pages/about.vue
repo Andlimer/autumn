@@ -38,7 +38,9 @@
                     button.add-skill__button +
 
             li.groups__item(v-for="category in categories" :key="category.id")
-              skills-group
+              skills-group(
+                :category="category"
+              )
 
 </template>
 

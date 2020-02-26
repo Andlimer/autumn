@@ -1,31 +1,78 @@
 <template lang="pug">
   .skills-group
     .skills-group__header
-      h3.input.skills-group__title Name
+      h3.input.skills-group__title {{ category.category }}
       .skills-group__buttons
         button.btns.btns_edit
+        button.btns.btns_remove
 
     .skills
-      skills
+      ul.skills__list
+        skills-item(
+          v-for="skill in category.skills"
+          :key="skill.id"
+          :skill="skill"
+        )
 
     .skills-group__footer
-      form.add-skill
+      form(
+        @submit.pevent="addNewSkill"
+        :class={blocked: loading}
+      ).add-skill
         input(
           type="text" 
           placeholder="Новый навык"
+          v-model="skill.title"
         ).input.add-skill__name
         label.add-skill__field
           input(
             type="number" 
             placeholder="100"
+            v-model="skill.percent"
           ).input.add-skill__percent
-        button.add-skill__button +
+        button(
+          type="submit"
+          :disabled="loading"
+        ).add-skill__button +
 </template>
 
 <script>
+import { mapActions} from "vuex";
 export default {
   components: {
-    skills: () => import("./skills")
+    skillsItem: () => import("./skills-item")
+  },
+  data() {
+    return {
+      loading: false,
+      skill: {
+        title: "",
+        percent: 0,
+        category: this.category.id
+      }
+    }
+  },
+  props: {
+    category: {
+      type: Object,
+      default: () => {},
+      required: true
+    }
+  },
+  methods: {
+    ...mapActions("skills", ["addSkill"]),
+    async addNewSkill() {
+      this.loading = true;
+      try {
+        await this.addSkill(this.skill);
+        this.skill.title = "";
+        this.skill.percent = "";
+      } catch(error) {
+
+      } finally {
+        this.loading = false;
+      }
+    }
   }
 }
 </script>
@@ -134,4 +181,12 @@ export default {
     background-image: $admin-btn-color;
     border-radius: 50%;
   }
+
+  .add-skill.blocked {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    pointer-events: none;
+    user-select: none;
+  }
+
 </style>
